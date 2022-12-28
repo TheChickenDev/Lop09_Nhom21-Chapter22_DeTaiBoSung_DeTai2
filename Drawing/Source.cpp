@@ -337,7 +337,7 @@ void mul_polynomials(Node* P, Node* Q) {
 		int x1 = 10, y1 = 10;
 		int xMul = 10;
 		int xRes = 10;
-			P = P->next;
+		P = P->next;
 		while (P->powz > 0) {
 			create_node(P->coeff * Q->coeff, P->powx + Q->powx, P->powy + Q->powy, P->powz + Q->powz, &mulNode);
 			create_node(P->coeff * Q->coeff, P->powx + Q->powx, P->powy + Q->powy, P->powz + Q->powz, &temp);
@@ -362,6 +362,7 @@ void mul_polynomials(Node* P, Node* Q) {
 			bar(x1, y1, x1 + 91, y1 + 51);
 			setcolor(LIGHTRED);
 			draw_Node(x1, y1, x1 + 90, y1 + 20, mulNode);
+			getch();
 			getimage(x1, y1, x1 + 90, y1 + 50, p);
 			bar(x1, y1, x1 + 91, y1 + 51);
 			putimage(x1, y1, p2, 1);
@@ -376,6 +377,7 @@ void mul_polynomials(Node* P, Node* Q) {
 				tempY += addY;
 			} while (y + tempY < yMul);
 			putimage(x + tempX, y + tempY, p, 1);
+			getch();
 			delete(p);
 			x1 += 100;
 			xMul += 100;
@@ -398,14 +400,16 @@ void mul_polynomials(Node* P, Node* Q) {
 		float addY = abs(y - yAdd) / 100;
 		delay(1000);
 		bar(10, yRes, getmaxwidth(), yRes + 140);
-		if (Q->next->powz > 0)
+		if (Q->next->powz > 0) {
 			do {
 				putimage(10, y - tempY, p, 1);
 				delay(5);
 				putimage(10, y - tempY, p, 1);
 				tempY += addY;
 			} while (y - tempY > yAdd);
-		putimage(xRes, y - tempY, p, 1);
+			putimage(xRes, y - tempY, p, 1);
+		}
+		getch();
 		delete(p);
 		delay(500);
 		bar(10, yMul, getmaxwidth(), yMul + 140);
