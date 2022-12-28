@@ -362,7 +362,6 @@ void mul_polynomials(Node* P, Node* Q) {
 			bar(x1, y1, x1 + 91, y1 + 51);
 			setcolor(LIGHTRED);
 			draw_Node(x1, y1, x1 + 90, y1 + 20, mulNode);
-			getch();
 			getimage(x1, y1, x1 + 90, y1 + 50, p);
 			bar(x1, y1, x1 + 91, y1 + 51);
 			putimage(x1, y1, p2, 1);
@@ -377,7 +376,6 @@ void mul_polynomials(Node* P, Node* Q) {
 				tempY += addY;
 			} while (y + tempY < yMul);
 			putimage(x + tempX, y + tempY, p, 1);
-			getch();
 			delete(p);
 			x1 += 100;
 			xMul += 100;
@@ -409,7 +407,6 @@ void mul_polynomials(Node* P, Node* Q) {
 			} while (y - tempY > yAdd);
 			putimage(xRes, y - tempY, p, 1);
 		}
-		getch();
 		delete(p);
 		delay(500);
 		bar(10, yMul, getmaxwidth(), yMul + 140);
